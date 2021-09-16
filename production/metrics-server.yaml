@@ -11,6 +11,10 @@ spec:
     path: charts/metrics-server
     repoURL: https://github.com/kubernetes-sigs/metrics-server.git
     targetRevision: HEAD
+    helm:
+      parameters:
+        - name: args[1]
+          value: '--kubelet-insecure-tls'
   destination:
     namespace: kube-system
     server: https://kubernetes.default.svc
