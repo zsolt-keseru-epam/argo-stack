@@ -10,7 +10,7 @@ metadata:
 spec:
   project: production
   source:
-    repoURL: http://gitea-http.default.svc:3000/gitea_admin/argo-combined-demo.git
+    repoURL: https://github.com/zsolt-keseru-epam/argo-stack.git
     targetRevision: HEAD
     path: production
   destination:
@@ -33,7 +33,7 @@ metadata:
 spec:
   project: staging
   source:
-    repoURL: http://gitea-http.default.svc:3000/gitea_admin/argo-combined-demo.git
+    repoURL: https://github.com/zsolt-keseru-epam/argo-stack.git
     targetRevision: HEAD
     path: staging
   destination:
