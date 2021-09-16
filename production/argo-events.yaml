@@ -9,7 +9,7 @@ spec:
   project: production
   source:
     path: argo-events/overlays/production
-    repoURL: http://gitea-http.default.svc:3000/gitea_admin/argo-combined-demo
+    repoURL: https://github.com/zsolt-keseru-epam/argo-stack
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
