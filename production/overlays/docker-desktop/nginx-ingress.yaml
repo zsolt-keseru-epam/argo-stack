@@ -15,6 +15,11 @@ spec:
       parameters:
         - name: "controller.service.type"
           value: "NodePort"
+  ignoreDifferences:
+  - group: v1
+    kind: Service
+    jqPathExpressions:
+    - .spec.ports[].nodePort
   destination:
     namespace: monitoring
     server: https://kubernetes.default.svc
