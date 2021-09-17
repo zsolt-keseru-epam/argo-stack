@@ -8,7 +8,7 @@ metadata:
 spec:
   project: production
   source:
-    path: kubernetes-ingress/deployments/helm-chart
+    path: deployments/helm-chart
     repoURL: https://github.com/nginxinc/kubernetes-ingress.git
     targetRevision: HEAD
   destination:
