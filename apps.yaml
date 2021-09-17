@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/zsolt-keseru-epam/argo-stack.git
     targetRevision: HEAD
-    path: production
+    path: production/overlays/docker-desktop
   destination:
     server: https://kubernetes.default.svc
     namespace: production
