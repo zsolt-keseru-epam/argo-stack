@@ -13,7 +13,7 @@ spec:
     targetRevision: HEAD
     helm:
       parameters:
-        - name: "service.type"
+        - name: "controller.service.type"
           value: "NodePort"
   destination:
     namespace: monitoring
