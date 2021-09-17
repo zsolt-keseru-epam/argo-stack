@@ -16,7 +16,7 @@ spec:
         - name: "controller.service.type"
           value: "NodePort"
   ignoreDifferences:
-  - group: v1
+  - group: ""
     kind: Service
     jqPathExpressions:
     - .spec.ports[].nodePort
