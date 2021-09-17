@@ -21,7 +21,7 @@ spec:
     jqPathExpressions:
     - .spec.ports[].nodePort
   destination:
-    namespace: monitoring
+    namespace: kube-system
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
