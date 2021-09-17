@@ -11,6 +11,10 @@ spec:
     path: deployments/helm-chart
     repoURL: https://github.com/nginxinc/kubernetes-ingress.git
     targetRevision: HEAD
+    helm:
+      parameters:
+        - key: "service.type"
+          value: "NodePort"
   destination:
     namespace: monitoring
     server: https://kubernetes.default.svc
