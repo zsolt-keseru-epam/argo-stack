@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: builder
+spec:
+  dependencies:
+    - name: gitea
+      eventSourceName: webhook
+      eventName: gitea
+  triggers:
+    - template:
+        name: argo-workflow-trigger
+        argoWorkflow:
+          group: argoproj.io
+          version: v1alpha1
+          resource: workflows
+          operation: submit
+          parameters:
+            - src:
+                dependencyName: gitea
+                dataKey: body.repository.clone_url
+              dest: spec.arguments.parameters.0.value
+            - src:
+                dependencyName: gitea
+                dataKey: body.repository.name
+              dest: spec.arguments.parameters.1.value
+          source:
+            resource:
+              apiVersion: argoproj.io/v1alpha1
+              kind: Workflow
+              metadata:
+                generateName: "repo1-"
+              spec:
+                workflowTemplateRef:
+                  name: go-build
+                arguments:
+                  parameters:
+                    - name: repo
+                      value: "{{inputs.parameters.repo}}"
+                    - name: project
+                      value: "{{inputs.parameters.project}}"

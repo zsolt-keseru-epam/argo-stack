@@ -8,7 +8,7 @@ metadata:
 spec:
   project: production
   source:
-    path: argo-events/overlays/production
+    path: argo-events/base
     repoURL: https://github.com/zsolt-keseru-epam/argo-stack
     targetRevision: HEAD
   destination:
